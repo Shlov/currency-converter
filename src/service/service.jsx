@@ -7,6 +7,8 @@ export const getUserInfo = ({latitude, longitude}) => {
 
 var myHeaders = new Headers();
 myHeaders.append("apikey", "Bqf0jgud3HsN3E435u3LbG7qgqDyjvOj");
+// my key
+// myHeaders.append("apikey", "QyClMc2RdQVlFaq5AsenCSKeB6swSSsS");
 
 var requestOptions = {
   method: 'GET',

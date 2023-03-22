@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-
+import { useSelector } from 'react-redux';
+import { getbaseCurrency } from 'Redux/selectors';
 
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -16,9 +17,11 @@ import Button from '@mui/material/Button';
 
 import MenuItem from '@mui/material/MenuItem';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import { Tooltip } from '@mui/material';
 
 export const Layout = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const baseCurrency = useSelector(getbaseCurrency);
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
@@ -27,7 +30,6 @@ export const Layout = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
 
   return (
     <>
@@ -90,13 +92,20 @@ export const Layout = () => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                <MenuItem key="Home" onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
+                <MenuItem key="Home" onClick={handleCloseNavMenu} sx={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  }}>
+                  <Typography textAlign="center" >Home</Typography>
                 </MenuItem>
-                <MenuItem key="Rates" onClick={handleCloseNavMenu}>
+                <MenuItem key="Rates" onClick={handleCloseNavMenu} sx={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  }}>
                   <Typography textAlign="center">Rates</Typography>
                 </MenuItem>
               </Menu>
+
             </Box>
             <CurrencyExchangeIcon
               sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
@@ -134,10 +143,53 @@ export const Layout = () => {
               >
                 <NavLink to="/rates">Rates</NavLink>
               </Button>
-              {/* <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/rates">Rates</NavLink>
-        </nav> */}
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Your base currency">
+                
+                <Typography
+              variant="h5"
+              noWrap
+              component="p"
+
+              sx={{
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              YBC: {baseCurrency}
+            </Typography>
+
+              </Tooltip>
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Your base currency">
+              
+              <Typography
+              variant="h6"
+              noWrap
+              component="p"
+
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Your base currency: {baseCurrency}
+            </Typography>
+              
+            </Tooltip>
             </Box>
           </Toolbar>
         </Container>

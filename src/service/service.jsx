@@ -21,4 +21,14 @@ export const exChange = (to, from, amount) => {
   return   fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, requestOptions)
   .then(response => response.json())
 
-  }
+};
+
+export const getExchangeRates = () => {
+  const API_KEY = 'a90faa813d1742bebca7877363c3e748';
+  const url = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`;
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+  
+}

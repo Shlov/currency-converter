@@ -23,12 +23,10 @@ export const exChange = (to, from, amount) => {
 
 };
 
-export const getExchangeRates = () => {
+export const getExchangeRates = (currency='USD') => {
   const API_KEY = 'a90faa813d1742bebca7877363c3e748';
-  const url = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}`;
+  const url = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}&base=${currency}`;
   return fetch(url)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+    .then(response => response.json());
   
 }

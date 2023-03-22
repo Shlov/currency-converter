@@ -18,7 +18,7 @@ var requestOptions = {
 
 
 export const exChange = (to, from, amount) => {
- return   fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, requestOptions)
+  return   fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to}&from=${from}&amount=${amount}`, requestOptions)
   .then(response => response.json())
 
   }

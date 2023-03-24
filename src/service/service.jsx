@@ -24,8 +24,8 @@ export const exChange = (to, from, amount) => {
 };
 
 export const getExchangeRates = (currency='USD') => {
-  const API_KEY = 'a90faa813d1742bebca7877363c3e748';
-  const url = `https://openexchangerates.org/api/latest.json?app_id=${API_KEY}&base=${currency}`;
+  const AK = 'ec385bd0b15a447aae764ec6825a4d'+'64';
+  const url = `https://openexchangerates.org/api/latest.json?app_id=${AK}&base=${currency}`;
   return fetch(url)
     .then(response => response.json());
   

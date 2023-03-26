@@ -33,12 +33,6 @@ export const Layout = () => {
 
   return (
     <>
-      {/* <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/rates">Rates</NavLink>
-        </nav>
-      </header> */}
 
       <AppBar position="static">
         <Container maxWidth="md">
@@ -151,7 +145,6 @@ export const Layout = () => {
               variant="h5"
               noWrap
               component="p"
-
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
@@ -165,17 +158,14 @@ export const Layout = () => {
             >
               YBC: {baseCurrency}
             </Typography>
-
               </Tooltip>
             </Box>
             <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Your base currency">
-              
               <Typography
               variant="h6"
               noWrap
               component="p"
-
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },

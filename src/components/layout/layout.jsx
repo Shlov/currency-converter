@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 
 import MenuItem from '@mui/material/MenuItem';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
-import { Tooltip } from '@mui/material';
+import { Divider, Tooltip } from '@mui/material';
 
 export const Layout = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -33,7 +33,6 @@ export const Layout = () => {
 
   return (
     <>
-
       <AppBar position="static">
         <Container maxWidth="md">
           <Toolbar disableGutters>
@@ -185,8 +184,21 @@ export const Layout = () => {
         </Container>
       </AppBar>
       <Suspense fallback={<p>......</p>}>
-        <Outlet />
+        <Box component="main"  sx={{ backgroundColor: '#1A2027', margin: 0, height: '100%', maxWidth: '100%'}}>
+          <Outlet />
+        </Box>
       </Suspense>
+      <Divider sx={{ my: 2 }} />
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Typography level="body3" sx={{ ml: 'auto', mr: 'auto', backgroundColor: 'inherit' }}>
+        by Shlov ʕ·͡ᴥ·ʔ 2023
+        </Typography>
+      </Box>
     </>
   );
 };

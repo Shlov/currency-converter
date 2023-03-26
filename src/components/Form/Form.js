@@ -67,7 +67,7 @@ export const Form = ({ theme }) => {
 
   return (
     <>
-      <Container maxWidth="md" sx={{ backgroundColor: '#1A2027' }}>
+      <Container maxWidth="md" sx={{ backgroundColor: '#1A2027'}}>
         <form onSubmit={handleSubmit}>
           <Grid
             container

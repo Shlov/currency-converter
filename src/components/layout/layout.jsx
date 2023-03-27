@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+// import Sheet from '@mui/joy/Sheet';
 
 import Button from '@mui/material/Button';
 
@@ -33,6 +34,19 @@ export const Layout = () => {
 
   return (
     <>
+    {/* <Sheet
+      variant="solid"
+
+      invertedColors
+      sx={{
+        flexGrow: 1,
+        p: 2,
+        mx: -3,
+        my: -3,
+        borderRadius: { xs: 0, sm: 'xs' },
+      }}
+    > */}
+
       <AppBar position="static">
         <Container maxWidth="md">
           <Toolbar disableGutters>
@@ -53,7 +67,7 @@ export const Layout = () => {
                 color: 'inherit',
                 textDecoration: 'none',
               }}
-            >
+              >
               Currency converter
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -64,7 +78,7 @@ export const Layout = () => {
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
                 color="inherit"
-              >
+                >
                 <MenuIcon />
               </IconButton>
               <Menu
@@ -84,17 +98,17 @@ export const Layout = () => {
                 sx={{
                   display: { xs: 'block', md: 'none' },
                 }}
-              >
+                >
                 <MenuItem key="Home" onClick={handleCloseNavMenu} sx={{
                   color: 'inherit',
                   textDecoration: 'none',
-                  }}>
+                }}>
                   <Typography textAlign="center" >Home</Typography>
                 </MenuItem>
                 <MenuItem key="Rates" onClick={handleCloseNavMenu} sx={{
                   color: 'inherit',
                   textDecoration: 'none',
-                  }}>
+                }}>
                   <Typography textAlign="center">Rates</Typography>
                 </MenuItem>
               </Menu>
@@ -102,7 +116,7 @@ export const Layout = () => {
             </Box>
             <CurrencyExchangeIcon
               sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
-            />
+              />
             <Typography
               variant="h5"
               noWrap
@@ -126,7 +140,7 @@ export const Layout = () => {
                 key="Home"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+                >
                 <NavLink to="/">Home</NavLink>
               </Button>
               <Button
@@ -154,7 +168,7 @@ export const Layout = () => {
                 color: 'inherit',
                 textDecoration: 'none',
               }}
-            >
+              >
               YBC: {baseCurrency}
             </Typography>
               </Tooltip>
@@ -174,7 +188,7 @@ export const Layout = () => {
                 color: 'inherit',
                 textDecoration: 'none',
               }}
-            >
+              >
               Your base currency: {baseCurrency}
             </Typography>
               
@@ -194,11 +208,12 @@ export const Layout = () => {
           display: 'flex',
           alignItems: 'center',
         }}
-      >
+        >
         <Typography level="body3" sx={{ ml: 'auto', mr: 'auto', backgroundColor: 'inherit' }}>
         by Shlov ʕ·͡ᴥ·ʔ 2023
         </Typography>
       </Box>
+      {/* </Sheet> */}
     </>
   );
 };
